@@ -1,13 +1,14 @@
 {
-    "name": "optimus/genie",
+    "name": "rezayavari/repobase",
     "autoload": {
         "psr-4": {
-            "Optimus\\Genie\\": "src/"
+            "Rezayavari\\Repobase\\": "src/"
         }
     },
     "require": {
+        "php": ">=5.6",
         "illuminate/database": ">=4.0",
-        "optimus/bruno": "~3.0"
+        "rezayavari/querybuilder": "~3.0"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",

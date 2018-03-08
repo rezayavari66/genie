@@ -1,4 +1,4 @@
-# Genie
+RepoBase
 
 [![Latest Version](https://img.shields.io/github/release/esbenp/genie.svg?style=flat-square)](https://github.com/esbenp/genie/releases)
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
@@ -20,13 +20,7 @@ Dedicated to the World's best (and only) Genie in a bottle. [Congrats on the fre
 For Laravel 5.4 and above
 
 ```bash
-composer require optimus/genie ~2.0
-```
-
-For Laravel 5.3 and below
-
-```bash
-composer require optimus/genie ~1.0
+composer require rezayavari/repobase
 ```
 
 ## Implementation
@@ -136,8 +130,8 @@ $ phpunit
 
 ## Contributing
 
-Please see [CONTRIBUTING](https://github.com/esbenp/genie/blob/master/CONTRIBUTING.md) for details.
+Please see [CONTRIBUTING](https://github.com/rezayavari66/repobase/blob/master/CONTRIBUTING.md) for details.
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/esbenp/genie/blob/master/LICENSE) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/rezayavari66/repobase/blob/master/LICENSE) for more information.

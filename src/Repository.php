@@ -1,11 +1,12 @@
 <?php
 
-namespace Optimus\Genie;
+namespace Rezayavari\Repobase;
 
 use Illuminate\Database\DatabaseManager;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Optimus\Bruno\EloquentBuilderTrait;
+use Illuminate\Database\Eloquent\Model;
+use Rezayavari\Querybuilder\EloquentBuilderTrait;
 
 abstract class Repository
 {
@@ -18,11 +19,10 @@ abstract class Repository
     // 0 = ASC, 1 = DESC
     protected $sortDirection = 0;
 
-    abstract protected function getModel();
 
-    final public function __construct()
+    final public function __construct(Model $model)
     {
-        $this->model = $this->getModel();
+        $this->model = $model;
     }
 
     /**
@@ -161,41 +161,42 @@ abstract class Repository
     /**
      * Delete a resource by its primary key
      * @param  mixed $id
-     * @return void
+     * @return boolean
      */
     public function delete($id)
     {
         $query = $this->createQueryBuilder();
 
         $query->where($this->getPrimaryKey($query), $id);
-        $query->delete();
+
+        return $query->delete();
     }
 
     /**
      * Delete resources by a where clause
      * @param  string $column
      * @param  mixed $value
-     * @return void
+     * @return boolean
      */
     public function deleteWhere($column, $value)
     {
         $query = $this->createQueryBuilder();
 
         $query->where($column, $value);
-        $query->delete();
+        return $query->delete();
     }
 
     /**
      * Delete resources by multiple where clauses
      * @param  array  $clauses
-     * @return void
+     * @return boolean
      */
     public function deleteWhereArray(array $clauses)
     {
         $query = $this->createQueryBuilder();
 
         $query->whereArray($clauses);
-        $query->delete();
+        return $query->delete();
     }
 
     /**
