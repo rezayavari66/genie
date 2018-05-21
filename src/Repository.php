@@ -5,7 +5,6 @@ namespace Rezayavari\Repobase;
 use Illuminate\Database\DatabaseManager;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Database\Eloquent\Model;
 use Rezayavari\Querybuilder\EloquentBuilderTrait;
 
 abstract class Repository
@@ -20,10 +19,10 @@ abstract class Repository
     protected $sortDirection = 0;
 
 
-    final public function __construct(Model $model)
-    {
-        $this->model = $model;
-    }
+	final public function __construct()
+	{
+		$this->model = $this->getModel();
+	}
 
     /**
      * Get all resources
